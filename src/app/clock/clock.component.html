@@ -1,0 +1,10 @@
+<ul class="clock">
+  <li *ngFor="let row of clockFace; let i = index">
+    <ul class="clock-row">
+      <li *ngFor="let node of row"
+          class="clock-char" [class.on]="node.on">
+        {{node.char}}
+      </li>
+    </ul>
+  </li>
+</ul>

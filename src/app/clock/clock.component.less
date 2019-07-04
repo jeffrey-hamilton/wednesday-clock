@@ -1,0 +1,45 @@
+@import (css) url('https://fonts.googleapis.com/css?family=Karla&display=swap');
+
+@font: 'Karla', sans-serif;
+
+@char-padding: .25rem;
+@char-font-size: 1.2rem;
+@char-block-size: @char-font-size + .5rem;
+
+@char-color-off: rgba(0, 0, 0, .25);
+@char-color-on: rgba(255, 255, 255, 1);
+@char-glow-color: rgba(255, 255, 255, .8);
+@char-glow-transparent: rgba(255, 255, 255, 0);
+
+.clock,
+.clock-row {
+  list-style: none;
+  padding: 0;
+}
+
+.clock-char {
+  display: inline-block;
+  padding: @char-padding;
+  height: @char-block-size;
+  width: @char-block-size;
+
+  color: @char-color-off;
+  text-shadow: @char-glow-transparent 0 0 .5rem;
+  font: @char-font-size @font;
+  line-height: @char-block-size;
+  text-align: center;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  transition: color 1s, text-shadow 1s;
+}
+
+.clock-char.on {
+  color: @char-color-on;
+  text-shadow: @char-glow-color 0 0 .5rem;
+}
