@@ -11,6 +11,10 @@
 @char-glow-color: rgba(255, 255, 255, .8);
 @char-glow-transparent: rgba(255, 255, 255, 0);
 
+@small-char-padding: .1rem;
+@small-char-font-size: 1rem;
+@small-char-block-size: @small-char-font-size + .2rem;
+
 .clock,
 .clock-row {
   list-style: none;
@@ -42,4 +46,15 @@
 .clock-char.on {
   color: @char-color-on;
   text-shadow: @char-glow-color 0 0 .5rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .clock-char {
+    padding: @small-char-padding;
+    height: @small-char-block-size;
+    width: @small-char-block-size;
+
+    font: @small-char-font-size @font;
+    line-height: @small-char-block-size;
+  }
 }
